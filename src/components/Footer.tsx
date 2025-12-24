@@ -1,6 +1,9 @@
-import React from 'react';
+import { useState } from 'react';
+import MapModal from './MapModal';
 
 const Footer = () => {
+  const [isMapModalOpen, setIsMapModalOpen] = useState(false);
+
   return (
     <footer className="bg-gray-800 text-white py-8 mt-auto">
       <div className="container mx-auto px-4">
@@ -47,7 +50,16 @@ const Footer = () => {
             <div className="text-sm text-gray-300 space-y-2">
               <p>📧 email@example.com</p>
               <p>📞 010-1234-5678</p>
-              <p>📍 서울특별시</p>
+              <div className="flex items-center space-x-2">
+                <p>📍 경기도 용인시 처인구 모현읍</p>
+                <button
+                  onClick={() => setIsMapModalOpen(true)}
+                  className="text-blue-400 hover:text-blue-300 transition-colors duration-200 text-lg"
+                  title="지도에서 위치 보기"
+                >
+                  📍
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -57,6 +69,12 @@ const Footer = () => {
           <p>&copy; 2024 누리예. All rights reserved.</p>
         </div>
       </div>
+      
+      {/* 지도 모달 */}
+      <MapModal 
+        isOpen={isMapModalOpen} 
+        onClose={() => setIsMapModalOpen(false)} 
+      />
     </footer>
   );
 };

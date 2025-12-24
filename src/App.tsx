@@ -12,7 +12,7 @@ const App = () => {
         <div className="container mx-auto px-4 py-8">
           <div className="text-center">
             <h1 className="text-4xl font-bold text-gray-800 mb-4">
-              누리예에 오신 것을 환영합니다!
+              누리예에 오신 것을 환영합니다! 여기는 누리예를 위한 공간입니다!
             </h1>
             <p className="text-lg text-gray-600 mb-8">
               함께 성장하고 배워가는 동아리 공간입니다.
